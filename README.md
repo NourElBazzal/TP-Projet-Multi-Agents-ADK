@@ -8,7 +8,7 @@
 
 ---
 
-## 📖 Description du projet
+## Description du projet
 
 Système d'aide humanitaire pour les personnes déplacées au Liban.  
 Une personne déplacée pose une question en langage naturel et reçoit immédiatement :
@@ -23,7 +23,7 @@ L’objectif est de démontrer comment une architecture multi-agents peut struct
 
 ---
 
-## 🗂️ Base de données humanitaire
+## Base de données humanitaire
 
 Dans le cadre de ce projet, une base de données humanitaire spécifique au Liban a été créée manuellement afin d'alimenter les outils utilisés par les agents.
 
@@ -41,7 +41,7 @@ Cette base regroupe différentes catégories de ressources utiles pour les perso
 
 ---
 
-## 📊 Sources des données
+## Sources des données
 
 Les informations ont été collectées et consolidées à partir de plusieurs types de sources publiques :
 
@@ -66,7 +66,7 @@ Ces différentes sources ont été croisées lorsque possible afin d'améliorer 
 
 ---
 
-## ⚠️ Limites et vérification des données
+## Limites et vérification des données
 
 Malgré ces efforts de collecte, certaines informations peuvent :
 
@@ -78,7 +78,7 @@ Pour cette raison, le système inclut systématiquement un message recommandant 
 
 ---
 
-## 🔄 Perspectives d'amélioration
+## Perspectives d'amélioration
 
 Dans une version plus avancée du système, cette base de données pourrait être améliorée en :
 
@@ -89,7 +89,7 @@ Dans une version plus avancée du système, cette base de données pourrait êtr
 
 ---
 
-## 🏗️ Architecture multi-agents
+## Architecture multi-agents
 
 Le système est construit avec **Google ADK** et utilise plusieurs types d’agents.
 
@@ -116,7 +116,7 @@ Cette architecture permet :
 
 ---
 
-## ✅ Contraintes techniques remplies
+## Contraintes techniques remplies
 
 | #   | Contrainte              | Implémentation                                                                                                                       |
 | --- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -131,7 +131,7 @@ Cette architecture permet :
 
 ---
 
-## 🚀 Installation et lancement
+## Installation et lancement
 
 ```bash
 # 1. Cloner et créer l'environnement
@@ -156,7 +156,7 @@ python main.py
 
 ---
 
-## 💬 Exemples de requêtes
+## Exemples de requêtes
 
 ```
 "I am in Saida with my family and we had to leave our home. Where can we find shelter?"
@@ -168,7 +168,7 @@ python main.py
 
 Autres scenarios de test se trouvent dans le fichier **test_scenarios.json**
 
-## ⚠️ Problèmes rencontrés et solutions
+## Problèmes rencontrés et solutions
 
 ### 1. Conflit de parent agent (`Agent already has a parent`)
 
@@ -208,7 +208,7 @@ Autres scenarios de test se trouvent dans le fichier **test_scenarios.json**
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 tp-adk/
@@ -236,7 +236,7 @@ tp-adk/
 
 ```
 
-## 📌 Conclusion
+## Conclusion
 
 Ce projet démontre comment une architecture multi-agents peut organiser l’accès à des ressources humanitaires critiques.
 
