@@ -105,29 +105,28 @@ Cette architecture permet :
 
 ### Agents et leurs rôles
 
-| Agent               | Type            | Rôle                                                                                     |
-| ------------------- | --------------- | ---------------------------------------------------------------------------------------- |
-| `Coordinator Agent` | LlmAgent (root) | Route les requêtes via `transfer_to_agent` et `AgentTool`                                |
-| `Shelter Agent`     | LlmAgent        | Trouve les abris et hotlines régionales                                                  |
-| `Check Agent`       | LlmAgent        | Vérifie que la réponse contient les informations essentielles (contacts, avertissements) |
-| `Medical Agent`     | LlmAgent        | Fournit les contacts médicaux d'urgence                                                  |
-| `Food Agent`        | LlmAgent        | Recherche les initiatives d'aide alimentaire                                             |
-| `Overview Agent`    | LlmAgent        | Génère une vue globale des ressources disponibles                                        |
+| Agent               | Type            | Rôle                                                                                          |
+| ------------------- | --------------- | --------------------------------------------------------------------------------------------- |
+| `Coordinator Agent` | LlmAgent (root) | Route les requêtes via `transfer_to_agent` et `AgentTool`                                     |
+| `Shelter Agent`     | LlmAgent        | Recherche les abris d'urgence régionales                                                      |
+| `Check Agent`       | LlmAgent        | Vérifie que la réponse abri contient les informations essentielles (contacts, avertissements) |
+| `Medical Agent`     | LlmAgent        | Fournit les contacts médicaux d'urgence                                                       |
+| `Food Agent`        | LlmAgent        | Recherche les initiatives d'aide alimentaire                                                  |
 
 ---
 
 ## Contraintes techniques remplies
 
-| #   | Contrainte              | Implémentation                                                                                                                       |
-| --- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | ≥ 3 LlmAgents           | 5 agents : CoordinatorAgent, ShelterAgent, VerifyAgent, MedicalAgent, FoodAgent                                                      |
-| 2   | ≥ 3 tools custom        | 5 outils : `get_shelters_by_location`, `get_medical_resources`, `get_food_and_aid`, `get_hotline_by_region`, `get_emergency_summary` |
-| 3   | ≥ 2 Workflow Agents     | `ShelterPipeline` (SequentialAgent) + `OverviewLoop` (LoopAgent)                                                                     |
-| 4   | State partagé           | `output_key` sur chaque agent spécialisé spécialisé                                                                                  |
-| 5   | 2 mécanismes délégation | `transfer_to_agent` (CoordinatorAgent -> Pipelines) + `AgentTool` (CoordinatorAgent -> MedicalAgent/FoodAgent)                       |
-| 6   | ≥ 2 callbacks           | 4 types : `before_agent`, `after_agent`, `before_tool`                                                                               |
-| 7   | Runner programmatique   | `main.py` avec `Runner` + `InMemorySessionService`                                                                                   |
-| 8   | Démo fonctionnelle      | `adk web` et `python main.py` fonctionnels                                                                                           |
+| #   | Contrainte              | Implémentation                                                                                                                                                                                                                                                            |
+| --- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | ≥ 3 LlmAgents           | 5 agents : CoordinatorAgent, ShelterAgent, CheckAgent, MedicalAgent, FoodAgent                                                                                                                                                                                            |
+| 2   | ≥ 3 tools custom        | 5 outils : `get_shelters_by_location` (Utilisé par ShelterAgent), `get_hotline_by_region` (Utilisé par ShelterAgent), `get_medical_resources` (Utilisé par MedicalAgent), `get_food_and_aid` (Utilisé par FoodAgent), `get_emergency_summary` (Utilisé par OverviewAgent) |
+| 3   | ≥ 2 Workflow Agents     | `ShelterPipeline` (SequentialAgent) + `OverviewLoop` (LoopAgent)                                                                                                                                                                                                          |
+| 4   | State partagé           | `output_key` sur chaque agent spécialisé spécialisé                                                                                                                                                                                                                       |
+| 5   | 2 mécanismes délégation | `transfer_to_agent` (CoordinatorAgent -> Pipelines) + `AgentTool` (CoordinatorAgent -> MedicalAgent/FoodAgent)                                                                                                                                                            |
+| 6   | ≥ 2 callbacks           | 3 types : `before_agent_callback` (log quand un agent démarre), `after_agent_callback` (log quand un agent termine), `before_tool_callback` (log quand un tool est appelé)                                                                                                |
+| 7   | Runner programmatique   | `main.py` avec `Runner` + `InMemorySessionService`                                                                                                                                                                                                                        |
+| 8   | Démo fonctionnelle      | `adk web` et `python main.py` fonctionnels                                                                                                                                                                                                                                |
 
 ---
 
