@@ -100,7 +100,7 @@ python main.py
 "I feel very distressed after fleeing my home. Is there psychological support?"
 ```
 
-## Autres scenarios de test se trouvent dans le fichier **test_scenarios.json**
+Autres scenarios de test se trouvent dans le fichier **test_scenarios.json**
 
 ## ⚠️ Problèmes rencontrés et solutions
 
@@ -118,7 +118,7 @@ python main.py
 
 **Solution :** Supprimer tous les `{variables}` des instructions. Les agents extraient directement la localisation depuis le message de l'utilisateur, sans passer par le state partagé pour les données d'entrée. Le state reste utilisé uniquement pour les `output_key` (données de sortie).
 
-**Problème (version initiale du projet)** : ADK impose qu'un agent ne peut avoir qu'un seul parent...
+**N.B.** : Problème rencontré dans une version initiale de l'architecture.
 
 ---
 
@@ -139,16 +139,6 @@ python main.py
 3. `max_llm_calls` -> n'existe pas dans cette version d'ADK
 
 **Solution finale retenue :** Utilisation de **Gemini 2.5 Pro**, beaucoup plus fiable pour les architectures multi-agents.
-
----
-
-### 4. Hallucination de noms d'outils
-
-**Problème :** Le modèle inventait des noms d'outils inexistants (`End`, `MedicalAgent` depuis un agent qui n'y avait pas accès). ADK lançait `Tool 'X' not found`.
-
-**Cause :** Les instructions mentionnaient des agents par nom dans des contextes où ils n'étaient pas disponibles comme outils. Le LLM confondait `sub_agents` (accessibles via `transfer_to_agent`) et `AgentTool` (accessibles comme fonctions).
-
-**Solution :** Clarifier explicitement dans chaque instruction quels outils sont disponibles, et ne jamais mentionner le nom d'un autre agent dans l'instruction d'un agent spécialisé.
 
 ---
 
@@ -178,15 +168,20 @@ tp-adk/
 
 ---
 
+```
+
 ## 📌 Conclusion
+
 Ce projet démontre comment une architecture multi-agents peut organiser l’accès à des ressources humanitaires critiques.
 
 En séparant :
+
 - la coordination
 - la récupération des données
 - la validation des réponses
 
 le système reste modulaire, extensible et plus fiable.
 
+```
 
 ```
