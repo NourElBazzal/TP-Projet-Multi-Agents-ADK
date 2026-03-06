@@ -23,6 +23,72 @@ L’objectif est de démontrer comment une architecture multi-agents peut struct
 
 ---
 
+## 🗂️ Base de données humanitaire
+
+Dans le cadre de ce projet, une base de données humanitaire spécifique au Liban a été créée manuellement afin d'alimenter les outils utilisés par les agents.
+
+```
+my_agent/data/lebanon_resources.json
+```
+
+Cette base regroupe différentes catégories de ressources utiles pour les personnes déplacées :
+
+- 🏠 abris d'urgence (écoles publiques réquisitionnées comme refuges)
+- 🍞 aide alimentaire (ONG et initiatives locales)
+- 🏥 ressources médicales (lignes nationales d'urgence)
+- 📞 hotlines régionales officielles
+- 🔎 règles de vérification des ressources
+
+---
+
+## 📊 Sources des données
+
+Les informations ont été collectées et consolidées à partir de plusieurs types de sources publiques :
+
+### Sources officielles
+
+- Plateformes gouvernementales de gestion des crises
+- Communiqués d'organisations humanitaires
+- Annonces d'écoles utilisées comme abris temporaires
+
+### Organisations et ONG
+
+- initiatives locales de distribution alimentaire
+- organisations humanitaires actives sur le terrain
+
+### Sources communautaires
+
+- publications sur les réseaux sociaux
+- groupes locaux d'entraide
+- partages d'informations communautaires
+
+Ces différentes sources ont été croisées lorsque possible afin d'améliorer la fiabilité des informations.
+
+---
+
+## ⚠️ Limites et vérification des données
+
+Malgré ces efforts de collecte, certaines informations peuvent :
+
+- être partielles
+- évoluer rapidement
+- ne plus être disponibles
+
+Pour cette raison, le système inclut systématiquement un message recommandant de **contacter les ressources avant de se déplacer**.
+
+---
+
+🔄 Perspectives d'amélioration
+
+Dans une version plus avancée du système, cette base de données pourrait être améliorée en :
+
+- intégrant des API d'organisations humanitaires
+- utilisant une base de données dynamique (PostgreSQL / MongoDB)
+- mettant en place un processus de validation des ressources
+- permettant des mises à jour en temps réel
+
+---
+
 ## 🏗️ Architecture multi-agents
 
 Le système est construit avec **Google ADK** et utilise plusieurs types d’agents.
@@ -183,4 +249,3 @@ En séparant :
 le système reste modulaire, extensible et plus fiable.
 
 ---
-
