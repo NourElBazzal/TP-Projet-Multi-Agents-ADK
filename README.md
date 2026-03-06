@@ -13,10 +13,10 @@
 Système d'aide humanitaire pour les personnes déplacées au Liban.  
 Une personne déplacée pose une question en langage naturel et reçoit immédiatement :
 
-- 🏠 Des **abris d'urgence** (écoles publiques réquisitionnées par le gouvernement)
-- 🏥 Des **ressources médicales** (lignes nationales gratuites 24h/7)
-- 🍞 De l'**aide alimentaire** (ONG et initiatives locales)
-- 📞 Les **hotlines régionales** officielles par gouvernorat
+- Des **abris d'urgence** (écoles publiques réquisitionnées par le gouvernement)
+- Des **ressources médicales** (lignes nationales gratuites 24h/7)
+- De l'**aide alimentaire** (ONG et initiatives locales)
+- Les **hotlines régionales** officielles par gouvernorat
 
 Le système répond en **anglais, français ou arabe** selon la langue de l'utilisateur.
 L’objectif est de démontrer comment une architecture multi-agents peut structurer l’accès à des informations humanitaires critiques.
@@ -33,11 +33,11 @@ my_agent/data/lebanon_resources.json
 
 Cette base regroupe différentes catégories de ressources utiles pour les personnes déplacées :
 
-- 🏠 abris d'urgence (écoles publiques réquisitionnées comme refuges)
-- 🍞 aide alimentaire (ONG et initiatives locales)
-- 🏥 ressources médicales (lignes nationales d'urgence)
-- 📞 hotlines régionales officielles
-- 🔎 règles de vérification des ressources
+- abris d'urgence (écoles publiques réquisitionnées comme refuges)
+- aide alimentaire (ONG et initiatives locales)
+- ressources médicales (lignes nationales d'urgence)
+- hotlines régionales officielles
+- règles de vérification des ressources
 
 ---
 
