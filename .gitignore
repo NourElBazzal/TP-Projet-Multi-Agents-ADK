@@ -1,0 +1,54 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc.*
+*.so
+*.egg-info/
+.eggs/
+
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+
+# Environment variables (API keys)
+.env
+.env.*
+
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+# Logs
+*.log
+
+
+# Jupyter
+.ipynb_checkpoints
+
+
+# ADK / temporary files
+.adk/
+.cache/
+
+
+# Build / distribution
+build/
+dist/
+*.egg
+*.whl

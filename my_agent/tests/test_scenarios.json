@@ -1,0 +1,82 @@
+[
+  {
+    "id": "test_01_shelter_akkar_en",
+    "user_input": "I am in Akkar with my family. Where can we find shelter?",
+    "expected_main_route": "ShelterPipeline",
+    "expected_agents": ["CoordinatorAgent", "ShelterAgent", "CheckAgent"],
+    "expected_tools": ["get_shelters_by_location", "get_hotline_by_region"],
+    "expected_keywords": ["shelter", "call before going", "hotline", "Akkar"]
+  },
+  {
+    "id": "test_02_medical_bekaa_en",
+    "user_input": "My father is injured in Bekaa. Where can we get medical help urgently?",
+    "expected_main_route": "MedicalAgent",
+    "expected_agents": ["CoordinatorAgent", "MedicalAgent"],
+    "expected_tools": ["get_medical_resources"],
+    "expected_keywords": ["medical", "emergency", "call immediately", "Lebanon"]
+  },
+  {
+    "id": "test_03_food_saida_en",
+    "user_input": "We are in Saida and we need food assistance for my children.",
+    "expected_main_route": "FoodAgent",
+    "expected_agents": ["CoordinatorAgent", "FoodAgent"],
+    "expected_tools": ["get_food_and_aid"],
+    "expected_keywords": ["food", "aid", "Saida", "confirm availability"]
+  },
+  {
+    "id": "test_04_overview_tripoli_en",
+    "user_input": "I am in Tripoli. What emergency help is available nearby?",
+    "expected_main_route": "OverviewLoop",
+    "expected_agents": ["CoordinatorAgent", "OverviewAgent"],
+    "expected_tools": ["get_emergency_summary"],
+    "expected_keywords": ["shelter", "medical", "food", "hotline"]
+  },
+  {
+    "id": "test_05_missing_location_en",
+    "user_input": "We had to leave our home and we need help urgently.",
+    "expected_main_route": "Clarification",
+    "expected_agents": ["CoordinatorAgent"],
+    "expected_tools": [],
+    "expected_keywords": ["Which city or region in Lebanon are you in"]
+  },
+  {
+    "id": "test_06_mixed_needs_en",
+    "user_input": "I am in Nabatieh with my mother. We need shelter, medical help, and food.",
+    "expected_main_route": "OverviewLoop",
+    "expected_agents": ["CoordinatorAgent", "OverviewAgent"],
+    "expected_tools": ["get_emergency_summary"],
+    "expected_keywords": ["shelter", "medical", "food", "call before going"]
+  },
+  {
+    "id": "test_07_shelter_fr",
+    "user_input": "Je suis à Beyrouth avec mes enfants. Où peut-on trouver un abri ?",
+    "expected_main_route": "ShelterPipeline",
+    "expected_agents": ["CoordinatorAgent", "ShelterAgent", "CheckAgent"],
+    "expected_tools": ["get_shelters_by_location", "get_hotline_by_region"],
+    "expected_keywords": ["abri", "Beyrouth", "appelez avant de vous déplacer"]
+  },
+  {
+    "id": "test_08_food_fr",
+    "user_input": "Nous sommes à Saïda et nous avons besoin d'aide alimentaire.",
+    "expected_main_route": "FoodAgent",
+    "expected_agents": ["CoordinatorAgent", "FoodAgent"],
+    "expected_tools": ["get_food_and_aid"],
+    "expected_keywords": ["aide alimentaire", "Saïda", "confirmer la disponibilité"]
+  },
+  {
+    "id": "test_09_overview_fr",
+    "user_input": "Je suis au Liban-Nord, quelles aides d'urgence sont disponibles autour de moi ?",
+    "expected_main_route": "OverviewLoop",
+    "expected_agents": ["CoordinatorAgent", "OverviewAgent"],
+    "expected_tools": ["get_emergency_summary"],
+    "expected_keywords": ["abri", "médical", "nourriture", "hotline"]
+  },
+  {
+    "id": "test_10_medical_fr",
+    "user_input": "Mon mari est blessé dans la Békaa. Où trouver une aide médicale urgente ?",
+    "expected_main_route": "MedicalAgent",
+    "expected_agents": ["CoordinatorAgent", "MedicalAgent"],
+    "expected_tools": ["get_medical_resources"],
+    "expected_keywords": ["urgence", "médical", "appelez immédiatement"]
+  }
+]
