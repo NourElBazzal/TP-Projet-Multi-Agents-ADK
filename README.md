@@ -182,6 +182,7 @@ En séparant :
 
 le système reste modulaire, extensible et plus fiable.
 
-```
+---
 
 ```
+
