@@ -78,7 +78,7 @@ Pour cette raison, le système inclut systématiquement un message recommandant 
 
 ---
 
-🔄 Perspectives d'amélioration
+## 🔄 Perspectives d'amélioration
 
 Dans une version plus avancée du système, cette base de données pourrait être améliorée en :
 
