@@ -1,14 +1,4 @@
 """
-main.py
--------
-Script principal — Runner programmatique.
-
-Ce fichier remplit la contrainte #7 du TP :
-"Un script main.py qui instancie Runner + InMemorySessionService"
-
-Il permet de lancer le système en ligne de commande sans passer par `adk web`.
-Utile pour tester rapidement ou pour les démonstrations en terminal.
-
 Usage :
     python main.py
     python main.py "I am in Saida with my family. Where can we find shelter?"
